@@ -30,11 +30,29 @@ const footerSearch = document.getElementById('footerSearch');
 
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const navMenu = document.querySelector('.nav-menu');
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const closeIcon = document.querySelector('.close-icon');
 
 // Initialize theme from localStorage or default to light mode
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
+}
+
+// Mobile Menu logic
+function toggleMobileMenu() {
+    navMenu.classList.toggle('active');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+
+    // Disable scroll when menu is open
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
 }
 
 // Event Listeners
@@ -56,10 +74,25 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
 
+// Mobile menu toggle event
+mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when clicking nav items
+document.querySelectorAll('.nav-item a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navMenu.classList.contains('active')) {
+            toggleMobileMenu();
+        }
+    });
+});
+
 // Close modal on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !movieModal.classList.contains('hidden')) {
         closeModal();
+    }
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        toggleMobileMenu();
     }
 });
 

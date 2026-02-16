@@ -228,6 +228,36 @@ body.dark-mode .moon-icon {
     transform: rotate(-180deg) scale(0);
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: rgba(229, 9, 20, 0.1);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--accent-color);
+    margin-left: 1rem;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.mobile-menu-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.hidden {
+    display: none !important;
+}
+
 /* Header Styling */
 header {
     background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
@@ -422,7 +452,8 @@ header h1 {
     line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 2.6rem;
+    min-height: 3rem;
+    line-height: 1.3;
 }
 
 .movie-details {
@@ -819,13 +850,39 @@ header h1 {
         font-size: 0.6rem;
     }
 
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
     .nav-menu {
-        gap: 0.3rem;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--navbar-bg);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: var(--transition);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border-color);
+        z-index: 199;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
     }
 
     .nav-item a {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.8rem;
+        font-size: 1.1rem;
+        padding: 1rem;
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .nav-icon {
@@ -835,7 +892,24 @@ header h1 {
 
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-section.links a:hover {
+        transform: translateX(0) scale(1.05);
+    }
+
+    .contact-info p {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
     }
 
     header h1 {
@@ -844,6 +918,7 @@ header h1 {
 
     .search-container {
         flex-direction: column;
+        gap: 0.8rem;
     }
 
     #searchBtn {
@@ -853,11 +928,63 @@ header h1 {
     .results-section {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 1.5rem;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .movie-poster {
         height: 300px;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 80vh;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .modal-poster img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    #modalTitle {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .modal-meta {
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .meta-item {
+        font-size: 0.85rem;
+    }
+
+    .modal-genres {
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+    .genre-tag {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .modal-overview h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal-overview p {
+        font-size: 0.9rem;
     }
 }
 
@@ -879,14 +1006,19 @@ header h1 {
         display: none;
     }
 
+    .nav-icon {
+        width: 14px;
+        height: 14px;
+    }
+
     .nav-menu {
-        gap: 0.2rem;
+        padding: 1.5rem;
+        gap: 1rem;
     }
 
     .nav-item a {
-        font-size: 0.75rem;
-        padding: 0.5rem 0.6rem;
-        gap: 0.3rem;
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 
     .nav-icon {
