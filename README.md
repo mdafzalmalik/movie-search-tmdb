@@ -1,94 +1,47 @@
-# 🎬 Movie Search App
+# MovieHub
 
-A modern, responsive movie search application built with pure HTML, CSS, and Vanilla JavaScript using the TMDB API.
+A movie search web app powered by the TMDB API — discover trending movies and search for your next favorite film.
 
-## ✨ Features
+**Live site:** [movie-search-tmdb-ten.vercel.app](https://movie-search-tmdb-ten.vercel.app/)
 
-- 🔍 Real-time movie search using TMDB API
-- 🎨 Modern dark theme (Netflix-style design)
-- 📱 Fully responsive (mobile, tablet, desktop)
-- ⚡ Smooth animations and hover effects
-- 💾 LocalStorage for last search
-- 🔄 Loading spinner
-- ❌ Error handling
-- 🖼️ High-quality movie posters
+<br/>
 
-## 🚀 Getting Started
+## Screenshots
 
-### 1. Get TMDB API Key
+![Home](screenshots/home.png)
+![Contact](screenshots/contact.png)
 
-1. Visit [TMDB Website](https://www.themoviedb.org/)
-2. Create a free account
-3. Go to Settings → API
-4. Request an API key (it's free!)
-5. Copy your API key
+<br/>
 
-### 2. Setup
+## Features
 
-1. Open `script.js`
-2. Replace `YOUR_TMDB_API_KEY_HERE` with your actual API key:
-   ```javascript
-   const API_KEY = 'your_actual_api_key_here';
-   ```
+- **Search** — Find any movie via the TMDB API
+- **Trending** — Browse trending movies of the week, updated dynamically with ratings and release year
+- **Contact** — Get in touch section with developer details and social links
+- **Dark theme UI** with a clean, card-based movie grid
 
-### 3. Run the App
+<br/>
 
-Simply open `index.html` in your web browser!
+## Built With
 
-## 📁 File Structure
+- HTML
+- CSS
+- JavaScript
+- TMDB API
 
-```
-movie-app/
-├── index.html      # Main HTML structure
-├── style.css       # Styling and animations
-├── script.js       # JavaScript functionality
-└── README.md       # Documentation
+<br/>
+
+## Running Locally
+
+```bash
+git clone https://github.com/mdafzalmalik/movie-search-tmdb.git
+cd movie-search-tmdb
 ```
 
-## 🎯 Technologies Used
+Add your own [TMDB API key](https://www.themoviedb.org/documentation/api), then open `index.html` in your browser — no build step required.
 
-- **HTML5** - Semantic markup
-- **CSS3** - Flexbox, Grid, Animations
-- **Vanilla JavaScript** - Fetch API, Async/Await
-- **TMDB API** - Movie data
+<br/>
 
-## 🌟 Features Breakdown
+## Contact
 
-### UI/UX
-- Dark theme with gradient accents
-- Smooth card hover animations
-- Responsive grid layout
-- Modern typography (Poppins font)
-- Loading spinner during API calls
-
-### Functionality
-- Search movies by title
-- Display poster, title, release year, and rating
-- Handle empty searches
-- Handle API errors
-- Handle no results found
-- Enter key triggers search
-- LocalStorage saves last search
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: > 768px
-- **Tablet**: 481px - 768px
-- **Mobile**: < 480px
-
-## 🎨 Color Scheme
-
-- Background: `#0d0d0d`
-- Card Background: `#1a1a1a`
-- Accent Color: `#e50914` (Netflix red)
-- Text Primary: `#ffffff`
-- Text Secondary: `#b3b3b3`
-
-## 📝 License
-
-Free to use for personal and educational purposes.
-
-## 🙏 Credits
-
-- Movie data provided by [TMDB](https://www.themoviedb.org/)
-- Font: [Google Fonts - Poppins](https://fonts.google.com/specimen/Poppins)
+[LinkedIn](https://www.linkedin.com/in/mdafzalmalik/) · [Email](mailto:mdafzalmalik13@gmail.com) · [LeetCode](https://leetcode.com/u/mdafzalmalik/)
